@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(7, 33, 56);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden; /* Prevents scrollbar from appearing due to animations */
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1em; /* Space between buttons */
+      }
+
+      button {
+        height: 2.8em;
+        width: 9em;
+        background: transparent;
+        border: 2px solid #016dd9;
+        outline: none;
+        color: #016dd9;
+        cursor: pointer;
+        font-size: 17px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      button a {
+        color: #016dd9;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 2.8em;
+        transition: color 0.3s;
+      }
+
+      button:hover {
+        background: #016dd9;
+        color: #ffffff;
+        animation: squeeze3124 0.9s both;
+      }
+
+      button:hover a {
+        color: #ffffff;
+      }
+
+      @keyframes squeeze3124 {
+        0% {
+          transform: scale3d(1, 1, 1);
+        }
+        30% {
+          transform: scale3d(1.25, 0.75, 1);
+        }
+        40% {
+          transform: scale3d(0.75, 1.25, 1);
+        }
+        50% {
+          transform: scale3d(1.15, 0.85, 1);
+        }
+        65% {
+          transform: scale3d(0.95, 1.05, 1);
+        }
+        75% {
+          transform: scale3d(1.05, 0.95, 1);
+        }
+        100% {
+          transform: scale3d(1, 1, 1);
+        }
+      }
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <button><a href="Roast_pasangan.html">Test Kecocokan</a></button>
+      <button><a href="Roast_politik.html">Test Dunia Politik</a></button>
+    </div>
+  </body>
+</html>

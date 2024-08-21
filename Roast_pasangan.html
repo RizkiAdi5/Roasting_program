@@ -4,7 +4,10 @@
     <title>Kalkulator Persentase Kecocokan</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS v5.3.2 -->
     <link
@@ -14,8 +17,8 @@
       crossorigin="anonymous"
     />
     <style>
-    
-      html, body {
+      html,
+      body {
         height: 100%;
         margin: 0;
         overflow: hidden;
@@ -51,86 +54,100 @@
         color: #666;
       }
 
-      /* From Uiverse.io by Ghost-aft */ 
-.radio-input input {
-  display: none;
-}
+      /* From Uiverse.io by Ghost-aft */
+      .radio-input input {
+        display: none;
+      }
 
-.radio-input {
-  --container_width: 300px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  background-color: #fff;
-  color: #000000;
-  width: var(--container_width);
-  overflow: hidden;
-  border: 1px solid rgba(53, 52, 52, 0.226);
-}
+      .radio-input {
+        --container_width: 300px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        background-color: #fff;
+        color: #000000;
+        width: var(--container_width);
+        overflow: hidden;
+        border: 1px solid rgba(53, 52, 52, 0.226);
+      }
 
-.radio-input label {
-  width: 100%;
-  padding: 10px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  font-weight: 600;
-  letter-spacing: -1px;
-  font-size: 14px;
-}
+      .radio-input label {
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        font-weight: 600;
+        letter-spacing: -1px;
+        font-size: 14px;
+      }
 
-.selection {
-  display: none;
-  position: absolute;
-  height: 100%;
-  width: calc(var(--container_width) / 2);
-  z-index: 0;
-  left: 0;
-  top: 0;
-  transition: 0.15s ease;
-}
+      .selection {
+        display: none;
+        position: absolute;
+        height: 100%;
+        width: calc(var(--container_width) / 2);
+        z-index: 0;
+        left: 0;
+        top: 0;
+        transition: 0.15s ease;
+      }
 
-.radio-input label:has(input:checked) {
-  color: #fff;
-}
+      .radio-input label:has(input:checked) {
+        color: #fff;
+      }
 
-.radio-input label:has(input:checked) ~ .selection {
-  background-color: rgb(11 117 223);
-  display: inline-block;
-}
+      .radio-input label:has(input:checked) ~ .selection {
+        background-color: rgb(11 117 223);
+        display: inline-block;
+      }
 
-.radio-input label:nth-child(1):has(input:checked) ~ .selection {
-  transform: translateX(calc(var(--container_width) * 0 / 2));
-}
+      .radio-input label:nth-child(1):has(input:checked) ~ .selection {
+        transform: translateX(calc(var(--container_width) * 0 / 2));
+      }
 
-.radio-input label:nth-child(2):has(input:checked) ~ .selection {
-  transform: translateX(calc(var(--container_width) * 1 / 2));
-}
-
+      .radio-input label:nth-child(2):has(input:checked) ~ .selection {
+        transform: translateX(calc(var(--container_width) * 1 / 2));
+      }
     </style>
   </head>
 
   <body>
     <div class="text-center disclaimer">
-      Program ini dibuat hanya untuk hiburan<strong> tidak untuk dipercaya!</strong>
+      Program ini dibuat hanya untuk hiburan<strong>
+        tidak untuk dipercaya!</strong
+      >
     </div>
     <main class="d-flex justify-content-center align-items-center min-vh-100">
-      <form class="p-4 border rounded shadow-sm" onsubmit="calculatePercentage(event)" onreset="clearResult()">
-        <h2 class="mb-4">Hitung Persentase<br>Persentase Kecocokan</h2>
-
+      <form
+        class="p-4 border rounded shadow-sm"
+        onsubmit="calculatePercentage(event)"
+        onreset="clearResult()"
+      >
+        <h2 class="mb-4">Hitung<br />Persentase Kecocokan</h2>
+        <hr class="border border-3 border-success" />
         <div class="coolinput">
           <label for="nama_pria" class="text">Nama pria:</label>
-          <input type="text" placeholder="Pria" id="nama_pria" class="input" required>
-         
-
-
+          <input
+            type="text"
+            placeholder="Pria"
+            id="nama_pria"
+            class="input"
+            required
+          />
         </div>
         <div class="coolinput">
           <label for="nama_wanita" class="text">Nama wanita:</label>
-          <input type="text" placeholder="Wanita" id="nama_wanita" class="input" required>
+          <input
+            type="text"
+            placeholder="Wanita"
+            id="nama_wanita"
+            class="input"
+            required
+          />
         </div>
         <button type="submit" class="btn btn-primary w-100">Kirim</button>
         <button type="reset" class="btn btn-danger w-100 mt-2">Reset</button>
@@ -138,38 +155,44 @@
       </form>
     </main>
 
-   
     <script>
       function calculatePercentage(event) {
         event.preventDefault();
-        const namaPria = document.getElementById('nama_pria').value.trim();
-        const namaWanita = document.getElementById('nama_wanita').value.trim();
+        const namaPria = document.getElementById("nama_pria").value.trim();
+        const namaWanita = document.getElementById("nama_wanita").value.trim();
 
         if (namaPria && namaWanita) {
           const firstLetterPria = namaPria.charAt(0).toUpperCase();
           const firstLetterWanita = namaWanita.charAt(0).toUpperCase();
 
-     
-          const percentage = (firstLetterPria.charCodeAt(0) + firstLetterWanita.charCodeAt(0)) % 101;
+          const percentage =
+            (firstLetterPria.charCodeAt(0) + firstLetterWanita.charCodeAt(0)) %
+            101;
 
-         
-          document.getElementById('result').textContent = `Persentase kecocokan: ${percentage}%`;
+          document.getElementById(
+            "result"
+          ).textContent = `Persentase kecocokan: ${percentage}%`;
         } else {
-          document.getElementById('result').textContent = "Harap masukkan kedua nama!";
+          document.getElementById("result").textContent =
+            "Harap masukkan kedua nama!";
         }
       }
 
       function clearResult() {
-        document.getElementById('result').textContent = "";
+        document.getElementById("result").textContent = "";
       }
 
-      document.getElementById('nama_pria').addEventListener('input', function () {
-        this.value = this.value.replace(/[^A-Za-z\s]/g, '');
-      });
+      document
+        .getElementById("nama_pria")
+        .addEventListener("input", function () {
+          this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+        });
 
-      document.getElementById('nama_wanita').addEventListener('input', function () {
-        this.value = this.value.replace(/[^A-Za-z\s]/g, '');
-      });
+      document
+        .getElementById("nama_wanita")
+        .addEventListener("input", function () {
+          this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+        });
     </script>
 
     <!-- Bootstrap JavaScript Libraries -->
